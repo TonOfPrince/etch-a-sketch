@@ -25,8 +25,6 @@ var firstMessage=true;    // What the first message, to start on the first value
         firstMessage=false;
         previousPosition=newPosition;
       }else{ // any other message we use to draw.
-        ctx.height = 1024;
-        ctx.width = 1024;
         ctx.lineCap = 'round';
         ctx.lineJoin = 'round';
         ctx.fillStyle = ctx.strokeStyle = COLOUR;

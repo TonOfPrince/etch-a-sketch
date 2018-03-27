@@ -4,7 +4,7 @@
  //TODO: define other sensor inputs
 
 unsigned long targetTime=0;
-const unsigned long interval=200; //TODO: How fast should we read
+const unsigned long interval=100; //TODO: How fast should we read
 String x = "";
 String y = "";
 void setup(){
