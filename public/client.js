@@ -2,7 +2,7 @@ var COLOUR =  '#505050';  // This is the drawing color
 var radius = 3;           // Constant radio for the line
 var socket = io();        // websocket to the server
 var previousPosition=[0,0]; // previous position to draw a line from
-var ctx = Sketch.create({width:1024, height:1024}); //Creating the drawing context
+var ctx = Sketch.create(); //Creating the drawing context
 var firstMessage=true;    // What the first message, to start on the first value
 
     ctx.container = document.getElementById( 'container' ); //reference drawing canvas
@@ -25,6 +25,8 @@ var firstMessage=true;    // What the first message, to start on the first value
         firstMessage=false;
         previousPosition=newPosition;
       }else{ // any other message we use to draw.
+        ctx.height = 1024;
+        ctx.width = 1024;
         ctx.lineCap = 'round';
         ctx.lineJoin = 'round';
         ctx.fillStyle = ctx.strokeStyle = COLOUR;
