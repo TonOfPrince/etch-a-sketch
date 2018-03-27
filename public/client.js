@@ -31,6 +31,12 @@ var firstMessage=true;    // What the first message, to start on the first value
         let g = 255 * newPosition[1] / 1023;
         let b = 255 * Math.abs(newPosition[0] - newPosition[1]) / 1023;
         ctx.fillStyle = ctx.strokeStyle = `rgb(${r}, ${g}, ${b})`;
+        console.log('!!!!!!!!!!!!!!!!!1');
+        console.log(r);
+        console.log(g);
+        console.log(b);
+        console.log(`rgb(${r}, ${g}, ${b})`);
+        console.log(ctx.fillStyle);
         ctx.lineWidth = radius;
         ctx.beginPath();  //begin a adrawing
         ctx.moveTo( previousPosition[0], previousPosition[1] ); // from
