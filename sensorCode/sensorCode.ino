@@ -1,4 +1,6 @@
-#define SENSORPINA A0 // x axis
+#define SENSORPINX A2 // x axis
+#define SENSORPINY A3 // y axis
+#define RESETBUTTON 2 // y axis
  //TODO: define other sensor inputs
 
 unsigned long targetTime=0;
@@ -12,7 +14,7 @@ void setup(){
 void loop(){
 	if(millis()>=targetTime){
 		targetTime= millis()+interval;
-		Serial.println(analogRead(SENSORPINA));
+    Serial.println(String("[" + analogRead(SENSORPINX)+ "," + analogRead(SENSORPINY) + "]"));
 
 		 //TODO: Add other sensor read outs
      //TODO: convert values into a string https://www.arduino.cc/en/Tutorial/StringConstructors
@@ -23,5 +25,8 @@ void loop(){
 	}
 	// TODO: Detect if you want to reset the screen(shake the etch-a-sketch)
   // TODO: write the reset message(see server.js) to the serial port
+  if (digitalRead(RESETBUTTON) == "H") {
+    Serial.println("rst");
+  }
 
 }
