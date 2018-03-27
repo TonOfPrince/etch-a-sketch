@@ -27,7 +27,7 @@ var firstMessage=true;    // What the first message, to start on the first value
       }else{ // any other message we use to draw.
         ctx.lineCap = 'round';
         ctx.lineJoin = 'round';
-        ctx.fillStyle = ctx.strokeStyle = COLOUR;
+        ctx.fillStyle = ctx.strokeStyle = rgb(255 * newPosition[0] / 1023, 255 * newPosition[1] / 1023, 255 * Math.abs(newPosition[0] - newPosition[1]) / 1023 );
         ctx.lineWidth = radius;
         ctx.beginPath();  //begin a adrawing
         ctx.moveTo( previousPosition[0], previousPosition[1] ); // from
