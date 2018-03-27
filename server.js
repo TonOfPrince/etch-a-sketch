@@ -23,7 +23,6 @@ http.listen(serverPort, function() {
 // start the serial port connection and read on newlines
 const serial = new serialPort('/dev/ttyUSB0', {
  baudRate:115200
-
 });
 const parser = new readLine({
   delimiter: '\r\n'

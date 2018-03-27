@@ -4,9 +4,12 @@
  //TODO: define other sensor inputs
 
 unsigned long targetTime=0;
-const unsigned long interval=2500; //TODO: How fast should we read
+const unsigned long interval=200; //TODO: How fast should we read
+String x = "";
+String y = "";
 void setup(){
 // TODO: begin the serial connection with a baudrate of 115200
+//  Serial.begin(9600);
   Serial.begin(115200);
 }
 
@@ -14,18 +17,13 @@ void setup(){
 void loop(){
 	if(millis()>=targetTime){
 		targetTime= millis()+interval;
-    Serial.println(String("[" + analogRead(SENSORPINX)+ "," + analogRead(SENSORPINY) + "]"));
-
-		 //TODO: Add other sensor read outs
-     //TODO: convert values into a string https://www.arduino.cc/en/Tutorial/StringConstructors
-		 //TODO: combine them into a string that can be understood by server.js
-		 //TODO: send the string over serial
-
-
+    x = String(analogRead(SENSORPINX), DEC);
+    y = String(analogRead(SENSORPINY), DEC);
+    Serial.println(String(x + "," + y));
 	}
 	// TODO: Detect if you want to reset the screen(shake the etch-a-sketch)
   // TODO: write the reset message(see server.js) to the serial port
-  if (digitalRead(RESETBUTTON) == "H") {
+  if (digitalRead(RESETBUTTON)) {
     Serial.println("rst");
   }
 
