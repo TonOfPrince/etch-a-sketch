@@ -27,9 +27,9 @@ var firstMessage=true;    // What the first message, to start on the first value
       }else{ // any other message we use to draw.
         ctx.lineCap = 'round';
         ctx.lineJoin = 'round';
-        let r = 255 * newPosition[0] / 1023;
-        let g = 255 * newPosition[1] / 1023;
-        let b = 255 * Math.abs(newPosition[0] - newPosition[1]) / 1023;
+        let r = Math.floor(255 * newPosition[0] / 1023);
+        let g = Math.floor(255 * newPosition[1] / 1023);
+        let b = Math.floor(255 * Math.abs(newPosition[0] - newPosition[1]) / 1023);
         ctx.fillStyle = ctx.strokeStyle = `rgb(${r}, ${g}, ${b})`;
         console.log('!!!!!!!!!!!!!!!!!1');
         console.log(r);
