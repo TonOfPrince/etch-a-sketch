@@ -5,6 +5,7 @@ unsigned long targetTime=0;
 const unsigned long interval=2500; //TODO: How fast should we read
 void setup(){
 // TODO: begin the serial connection with a baudrate of 115200
+  Serial.begin(115200);
 }
 
 
